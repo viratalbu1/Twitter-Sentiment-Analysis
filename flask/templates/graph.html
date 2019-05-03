@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ChartJS - Doughnut</title>
+        <script src="{{ url_for( 'static', filename='js/jquery-2.1.4.min.js') }}"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+        <style>
+        body {
+    background: url("static/background.jpg");
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: center center;
+    height: 100vh;
+        }
+        .container{
+            height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        }</style>
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+	var ctx = $("#mycanvas").get(0).getContext("2d");
+
+	var data = [
+		{
+			value: {{positive}},
+			color: "cornflowerblue",
+			highlight: "lightskyblue",
+			label: "Positive % is"
+		},
+		{
+			value: {{spositive}},
+			color: "lightgreen",
+			highlight: "yellowgreen",
+			label: "Strongly Positive % is "
+		},
+		{
+			value: {{negative}},
+			color: "orange",
+			highlight: "darkorange",
+			label: "Negative % is"
+		},
+		{
+			value: {{snegative}},
+			color: "red",
+			highlight: "darkred",
+			label: "Strongly Negative % is"
+		},
+		{
+			value: {{neutral}},
+			color: "grey",
+			highlight: "darkgrey",
+			label: "Neutral % is"
+		},
+		{
+		    value: {{notcategory}},
+			color: "pink",
+			highlight: "darkpink",
+			label: "Not Categorised tweet % is"
+		}
+	];
+
+	var chart = new Chart(ctx).Doughnut(data);
+});
+        </script>
+        <script src="{{ url_for( 'static', filename='js/Chart.js') }}"></script>
+	</head>
+	<body>
+     <h1 class="text-center" >Sentiment Analysis For {{search_tweet}} Related Tweets </h1>
+     <div class="container">
+		<canvas id="mycanvas" width="600" height="600"></canvas>
+        </div>
+    </body>
+</html>

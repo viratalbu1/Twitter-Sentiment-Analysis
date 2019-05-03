@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Result Tweet</title>
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <style>
+    body {
+    background: url("static/background.jpg");
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: center center;
+    height: 100vh;
+        }
+        .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+            }
+            .text-center{
+   margin-top: 50px;
+}
+</style>
+</head>
+   <body>
+   <h1 class="text-center" >Tweet Searched For {{search_tweet}}</h1>
+   <form action="Graph" method="post">
+   <div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-primary btn-lg"  name="search_tweet" style="width: 48rem;" value='{{search_tweet}}'>Analyse</button>
+        <input type="hidden" name="subjectivity" value="{{ subjectivity }}"/>
+    </div>
+  </div>
+</div>
+   </form>
+    {% for value in tweet %}
+   <div class="card text-center  text-white bg-secondary mb-5" style="width: 50rem;>
+               <div class="card-body">
+                 <p class="card-text">{{ value }}</p>
+               </div>
+             </div>
+  {%  endfor %}
+   </body>
+</html>

@@ -1,0 +1,67 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#fff;
+    background: url(background.jpg);
+    background-size: cover;
+}
+
+.signin {
+    background:rgb(27, 137, 240);
+    padding: 10%;
+    padding: 80px;
+    width: 340px;
+    margin: auto;
+    height: 220px;
+    align-content: center;
+    opacity: .75;
+    margin-top: 70px;
+    position: relative;
+}
+form{
+    width: 340px;
+    text-align: center;
+}
+input
+{
+    width: 340px;
+    text-align: center;
+   
+    border: none;
+   
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0.5;
+    outline: none;
+    transition: border 0.5s;
+    color: black;
+    margin: 10px;
+}
+input[type=button]
+{
+    border:none;
+    width: 190px;
+    background: white;
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+    padding:10px 0;
+    border-radius: 15px;
+    cursor:pointer;
+    margin-top: inherit;
+
+}
+input[type=button]:hover
+{
+    color:#fff;
+    background-color:red;
+   
+}
+h2{
+    color:black;
+    text-decoration: blink;
+    margin-bottom: 100px;
+    font-size: 50px;
+    margin: inherit;
+}
+
